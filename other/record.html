@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>云枢博客记录</title>
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/record.css">
+    <script src="../js/jquery-3.4.1.js"></script>
+    <script src="../js/record.js"></script>
+</head>
+<body>
+    <nav class="nav" id="nav"><!--导航栏-->
+        <div class="container"><!--容器-->
+            <h1 class="left_logo"><!--左logo-->
+                <a href="">关于云枢博客</a>
+            </h1><!--左logo结束-->
+            <ul class="nav-list"><!--导航列表-->
+                <li><a href="../index.html">🏠首页</a></li>
+                <li><a href="personage.html">💻个人</a></li>
+                <li><a href="#" style="color: aquamarine;">📓记录</a></li>
+                <li><a href="photoTour.html" >🚗旅拍</a></li>
+                <li><a href="music.html">🎼音乐</a></li>
+                <li><a href="message.html">🗨️留言</a></li>
+                <li><a href="treasureBox.html">🔧百宝箱</a></li>
+                <li><a href="about.html" >🦈关于</a></li>
+                <li><a href="loginID.html"><img src="../image/cyburpunkcat1.png" alt="" class="loginID" id="loginID" title="登录"></a></li>
+            </ul><!--导航列表结束-->
+        </div><!--容器nav结束-->
+    </nav><!--导航栏结束-->
+    <main style="margin-top:200px ;">
+        <div id="password-box" class="module"><!--密码验证盒开始-->
+            <h2>请输入访问密码</h2>
+            <input type="password" id="password-input" placeholder="输入密码">
+            <button id="verify-btn">验证</button>
+            <p id="password-tip" class="tip"></p><!--验证提示-->
+        </div><!--密码验证盒结束-->
+        
+        <div id="blog-box" class="module" style="display: none;"><!--博客记录模块开始，默认隐藏，验证通过后显示-->
+            <div class="time-card"><!--时间卡片开始-->
+                <h3>当前时间</h3>
+                <p id="current-time"></p>
+            </div><!--时间卡片结束-->
+
+            <div class="note-card"><!--记录本卡片开始-->
+                <h3>博客记录本</h3>
+                <textarea id="note-content" placeholder="输入你的博客内容..."></textarea>
+                <div class="note-btn-group"><!--笔记按钮组件开始-->
+                    <button id="save-btn">保存记录</button>
+                    <button id="clear-btn">清空内容</button>
+                </div><!--笔记按钮组件结束-->
+                <div id="note-list" class="note-list"><!--记录列表开始-->
+                    <!--保存的记录会在这里显示-->
+                </div><!--记录列表结束-->
+            </div><!--记录本卡片结束-->
+        </div><!--博客记录模块结束，默认隐藏，验证通过后显示-->
+    </main>
+    <footer><!--底部开始-->
+        <p>&copy;云枢博客注明  版权所有 | 网站备案号：粤ICP备XXXXXXX号</p>
+    </footer><!--底部结束-->
+</body>
+</html>

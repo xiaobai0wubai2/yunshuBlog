@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>云枢博客首页</title>
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/jquery-3.4.1.js"></script>
+    <script src="js/index.js"></script>
+</head>
+<body>
+    <nav class="nav" id="nav"><!--导航栏-->
+        <div class="container"><!--容器-->
+            <h1 class="left_logo"><!--左logo-->
+                <a href="">云枢博客</a>
+            </h1><!--左logo结束-->
+            <ul class="nav-list"><!--导航列表-->
+                <li><a href="#" style="color: aqua;">🏠首页</a></li>
+                <li><a href="other/personage.html">💻个人</a></li>
+                <li><a href="other/record.html">📓记录</a></li>
+                <li><a href="other/photoTour.html">🚗旅拍</a></li>
+                <li><a href="other/music.html">🎼音乐</a></li>
+                <li><a href="other/message.html">🗨️留言</a></li>
+                <li><a href="other/treasureBox.html">🔧百宝箱</a></li>
+                <li><a href="other/about.html">🦈关于</a></li>
+                <li><a href="other/loginID.html"><img src="image/cyburpunkcat1.png" alt="" class="loginID" id="loginID" title="登录"></a></li>
+            </ul><!--导航列表结束-->
+        </div><!--容器nav结束-->
+    </nav><!--导航栏结束-->
+  <div class="banner"><!--轮播图开始-->
+    <div class="banner-slider"><!--轮播图滑块开始-->
+      <div class="banner-item active" style="background: url('image/banner1.jpg') center/cover no-repeat"><!--轮播1-->
+        <div class="banner-text"><!--轮播文本开始-->
+          <h2>云枢博客</h2>
+          <p>记录生活 · 分享热爱</p>
+        </div><!--轮播文本结束-->
+      </div>
+      <div class="banner-item active" style="background: url('image/banner4.jpg') center/cover no-repeat"><!--轮播2-->
+        <div class="banner-text"><!--轮播文本开始-->
+          <h2>个人</h2>
+          <p>路曼曼其修远兮，吾将上下而求索。</p>
+        </div><!--轮播文本结束-->
+      </div>
+      <div class="banner-item active" style="background: url('image/banner5.jpg') center/cover no-repeat"><!--轮播3-->
+        <div class="banner-text"><!--轮播文本开始-->
+          <h2>记录日常</h2>
+          <p>日出又盼，日落有念，所有美好，皆如我所愿。</p>
+        </div><!--轮播文本结束-->
+      </div>
+      <div class="banner-item" style="background: url('image/banner2.jpg') center/cover no-repeat"><!--轮播4-->
+        <div class="banner-text"><!--轮播文本开始-->
+          <h2>旅行相册</h2>
+          <p>足迹遍布的每一处风景</p>
+        </div><!--轮播文本结束-->
+      </div>
+      <div class="banner-item" style="background: url('image/banner3.jpg') center/cover no-repeat"><!--轮播5-->
+        <div class="banner-text"><!--轮播文本开始-->
+          <h2>音乐清单</h2>
+          <p>藏在旋律里的情绪</p>
+        </div><!--轮播文本结束-->
+      </div>
+      <div class="banner-item" style="background: url('image/banner6.jpg') center/cover no-repeat"><!--轮播6-->
+        <div class="banner-text"><!--轮播文本开始-->
+          <h2>留言记录</h2>
+          <p>不要想太多，不要熬夜，要经常笑。</p>
+        </div><!--轮播文本结束-->
+      </div>
+      <div class="banner-item" style="background: url('image/banner7.jpg') center/cover no-repeat"><!--轮播7-->
+        <div class="banner-text"><!--轮播文本开始-->
+          <h2>百宝箱</h2>
+          <p>生命中真正重要的不是你遭遇了什么，而是你记住了哪些事，又是如何铭记的。</p>
+        </div><!--轮播文本结束-->
+      </div>
+      <div class="banner-item" style="background: url('image/banner8.jpg') center/cover no-repeat"><!--轮播8-->
+        <div class="banner-text"><!--轮播文本开始-->
+          <h2>关于</h2>
+          <p>记住该记住的，忘记该忘记的。改变能改变的，接受不能改变的。</p>
+        </div><!--轮播文本结束-->
+      </div>
+      <!--轮播控制器-->
+      <div class="banner-dots"></div>
+    </div><!--轮播图滑块结束-->
+  </div><!--轮播图结束-->
+
+  
+  <div class="card-div"><!--功能卡片区开始-->
+    <div class="container"><!--内容区开始-->
+      <div class="card-item" data-href="other/treasureBox.html"><!--卡条1-->
+        <div class="card-icon" style="background: url(image/card1.png) center/cover no-repeat;"><!--卡片图标开始-->
+          <i class="icon-box"></i>
+        </div><!--卡片图标结束-->
+        <h3>百宝箱</h3>
+        <p>我的收藏与好物分享</p>
+      </div>
+      <div class="card-item" data-href="other/photoTour.html"><!--卡条2-->
+        <div class="card-icon" style="background: url(image/card2.png) center/cover no-repeat;"> <!--卡片图标开始-->
+          <i class="icon-photo"></i>
+        </div><!--卡片图标结束-->
+        <h3>旅行相册</h3>
+        <p>定格沿途的美好瞬间</p>
+      </div>
+      <div class="card-item" data-href="other/music.html"><!--卡条3-->
+        <div class="card-icon" style="background: url(image/card3.png) center/cover no-repeat;"><!--卡片图标开始-->
+          <i class="icon-music"></i>
+        </div><!--卡片图标结束-->
+        <h3>音乐清单</h3>
+        <p>治愈时光的旋律集</p>
+      </div>
+      <div class="card-item" data-href="other/message.html"><!--卡条4-->
+        <div class="card-icon" style="background: url(image/card4.png) center/cover no-repeat;"><!--卡片图标开始-->
+          <i class="icon-message"></i>
+        </div><!--卡片图标结束-->
+        <h3>留言板</h3>
+        <p>写下你的想法与交流</p>
+      </div>
+    </div><!--内容区结束-->
+  </div><!--功能卡片区结束-->
+
+  
+  <div class="news-div"><!--最新动态区 -->
+    <div class="container"><!--内容区开始-->
+      <h2>最新动态</h2>
+      <div class="news-list"><!--消息列表开始-->
+        <div class="news-item">
+          <span class="news-date">2025-11-02</span>
+          <p>更新了「百宝箱」的好物推荐</p>
+        </div>
+        <div class="news-item">
+          <span class="news-date">2025-11-11</span>
+          <p>新增旅行相册：「大海的声音」</p>
+        </div>
+        <div class="news-item">
+          <span class="news-date">2025-11-20</span>
+          <p>音乐清单添加了1首治愈系单曲</p>
+        </div>
+      </div><!--消息列表结束-->
+    </div><!--内容区结束-->
+  </div>
+  <footer><!--底部开始-->
+    <p>&copy;云枢博客注明  版权所有 | 网站备案号：粤ICP备XXXXXXX号</p>
+  </footer><!--底部结束-->
+</body>
+</html>

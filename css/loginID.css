@@ -1,0 +1,197 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 900px;
+    /* 简单背景，承托主题 */
+    background-color: #2e3a4e;
+    /* margin-bottom: 100px; */
+}
+/* 主体样式,子绝父相 */
+main{
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* 登录盒样式 */
+.login-box{
+    position: absolute;
+    width: 400px;
+}
+/* 登录表单样式 */
+.login-box form{
+    width: 100%;
+    padding: 0 50px;
+}
+h2{
+    margin-left: 20%;
+    font-size: 2.5rem;
+    color: #0ef;
+    text-align: center;
+}
+/* 输入盒样式 */
+.input-box{
+    position: relative;
+    margin: 25px 0;
+}
+/* 输入框样式 */
+.input-box input{
+    width: 90%;
+    height: 50px;
+    background-color: transparent;
+    border: 2px solid #2e4766;
+    outline:none;
+    border-radius: 40px;
+    font-size: 23px;
+    color: #fff;
+    padding: 0 20px;
+    transform: .5s ease;
+}
+/* 输入框聚焦和验证样式 */
+.input-box input:focus,.input-box input:valid{
+    border-color: #0ef;
+}
+/* 输入框内文字样式 */
+.input-box label{
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+    color: #fff;
+}
+/* 当 .input-box 内的 input 获得焦点和检查时时，选中它后面的 label */
+.input-box input:focus~label,.input-box input:valid~label{
+    top: -10px;
+    font-size: 1rem;
+    background: #2e4766b2;
+    padding: 0 8px;
+    color: #0ef;
+    border-radius: 20%;
+}
+/* 忘记密码样式 */
+.forget-password{
+    margin: -15px 0 10px;
+    text-align: center;
+}
+.forget-password a{
+    font-size: 1.2rem;
+    color: #fff;
+}
+.forget-password a:hover{
+    text-decoration: underline;
+}
+/* 登录按钮样式 */
+.btn{
+    width: 100%;
+    height:45px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    font-weight: 700;
+    font-size: 2rem;
+    color: rgb(33, 33, 247);
+    border: 0.5px solid rgb(33, 33, 247);
+    border-radius: 40px;
+    transition: 4s;
+ }
+/* 设置两个半圆位置 */
+.btn::before,.btn::after{
+    content: "";
+    position: absolute;
+    top: -18px;
+    /* 设置-1是为了让文字显示 */
+    z-index: -1;
+    /* 半透明蓝色圆形宽度是按钮的 2 倍 */
+    width: 200%;
+    /* 让元素宽高比始终保持 1:1,形成圆形 */
+    aspect-ratio: 1;
+    border: none;
+    border-radius: 40%;
+    background-color: rgba(0,0,255,0.25);
+    transition: 4s;
+}
+/* 按钮左侧半透明蓝色圆形 */
+.btn::before{
+    left: -80%;
+    /* 圆形从按钮下方初始位置开始，先向下移动70px隐藏，动画时向上移动 */
+    transform: translate3d(0,70px,0) rotate(-340deg);
+}
+/* 按钮右侧半透明蓝色圆形 */
+.btn::after{
+    right: -80%;
+    /* 两个圆形初始角度不同，形成环绕效果 */
+    transform: translate3d(0,70px,0) rotate(390deg);
+}
+/* 鼠标悬浮和聚焦样式 */
+.btn:hover,.btn:focus{
+    color: white;
+    cursor: pointer;
+}
+.btn:hover::before,.btn:hover::after,.btn:focus::before,.btn:focus::after{
+    /* 清除所有初始变形 */
+    transform: none;
+    /* 加深背景透明度 */
+    background-color: rgba(0,0,255,0.75);
+}
+/* 注册按钮样式 */
+.signup{
+    margin: 20px 0 10px;
+    text-align: center;
+}
+.signup a{
+    font-size: 15px;
+    color: #0ef;
+    text-decoration: none;
+    font-weight: 700;
+}
+.signup a:hover{
+    text-decoration: underline;
+}
+/* 渐变圆样式 */
+main span{
+    position: absolute;
+    left: 0;
+    width: 32px;
+    height: 6px;
+    background: #dfff93;
+    border-radius: 8px;
+    /*元素中心点，距离X轴：170px，Y轴：垂直居中  */
+    transform-origin: 170px;
+    /*整体放大 2.2 倍   使用var读取变量的值乘以7.2deg顺时针旋转，除以五十是因为共有50个span,calc是css计算函数*/
+    transform:scale(2.2) rotate(calc(var(--i) * (360deg / 50)));
+    /* 6秒一回，匀速播放，一直播放 */
+    animation: myanimate 6s linear infinite;
+    /* 设置差异化延迟动画  0.12*变量，形成渐变 */
+    animation-delay: calc(var(--i) * (6s / 50));
+}
+/* 设置渐变圆背景色改变 */
+@keyframes myanimate{
+    0%{
+        background: rgb(20, 230, 245);
+    }
+    25%{
+        background: #f56969;
+    }
+}
+/* 底部样式 */
+footer{
+    position: fixed;
+    bottom: 0%;
+    left: 50%;
+    z-index: -1;
+}
+/* 底部段落样式 */
+footer p{
+    height: 25px;
+    line-height: 25px;
+    width: 100px;
+    text-align: center;
+    border: 1px solid turquoise;
+    border-radius: 8%;
+    font-weight: 400;
+    color: #f7eea6d0;
+}

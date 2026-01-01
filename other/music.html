@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>云枢博客音乐</title>
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/music.css">
+    <script src="../js/jquery-3.4.1.js"></script>
+    <script src="../js/index.js"></script>
+    <script src="../js/music.js"></script>
+</head>
+<body>
+    <nav class="nav" id="nav" style="z-index: 100;"><!--导航栏-->
+        <div class="container"><!--容器-->
+            <h1 class="left_logo"><!--左logo-->
+                <a href="">关于云枢博客</a>
+            </h1><!--左logo结束-->
+            <ul class="nav-list"><!--导航列表-->
+                <li><a href="../index.html">🏠首页</a></li>
+                <li><a href="personage.html">💻个人</a></li>
+                <li><a href="record.html">📓记录</a></li>
+                <li><a href="photoTour.html">🚗旅拍</a></li>
+                <li><a href="music.html" style="color: aquamarine;">🎼音乐</a></li>
+                <li><a href="message.html">🗨️留言</a></li>
+                <li><a href="treasureBox.html">🔧百宝箱</a></li>
+                <li><a href="about.html">🦈关于</a></li>
+                <li><a href="loginID.html"><img src="../image/cyburpunkcat1.png" alt="" class="loginID" id="loginID" title="登录"></a></li>
+            </ul><!--导航列表结束-->
+        </div><!--容器nav结束-->
+    </nav><!--导航栏结束-->
+    <main class="container">
+        <div class="function-div"><!--功能模块区开始-->
+            <div class="function-card random-play"><!--随机播放模块开始-->
+                <div class="card-bg" style="background-image: url(../image/musicbg1.jpg);"></div>
+                <div class="card-content"><!--卡片内容开始-->
+                    <h3>随机播放</h3>
+                    <p>邂逅未知的美好旋律</p>
+                    <button class="random-btn"><i class="fas fa-random"></i> 开始随机</button>
+                </div><!--卡片内容结束-->
+            </div><!--随机播放模块结束-->
+             
+            <div class="function-card upload-cover"><!--自己唱/上传翻唱模块 -->
+                <div class="card-bg" style="background-image: url(../image/musicbg2.jpg);">
+                <div class="card-content"><!--卡片内容开始-->
+                    <h3>自己唱</h3>
+                    <p>上传你的翻唱作品</p>
+                    <label for="cover-upload" class="upload-btn"><i class="fas fa-upload"></i> 上传作品</label><!-- 隐藏的文件上传按钮 -->
+                    <input type="file" name="" id="cover-upload" accept="audio/*" hidden>
+                </div><!--卡片内容结束-->
+                </div><!--自己唱/上传翻唱模块结束 -->
+            </div>
+        </div><!--功能模块区结束-->
+         <div class="song-list-div"><!--歌曲列表区开始-->
+            <div class="div-header"><!--歌曲列表区头部开始-->
+                <h2>热门歌曲</h2>
+                <div class="sort-btn"><!--排序按钮开始-->
+                    <button class="active" data-sort="default">默认排序</button>
+                    <button data-sort="hot">热度排序</button>
+                </div><!--排序按钮结束-->
+            </div><!--歌曲列表区头部结束-->
+            <div class="song-list"><!--歌曲列表开始-->
+                <div class="song-item" data-id="1" data-audio="../music/song1.mp3"><!--data-*是自定义属性--> <!-- 歌曲1 -->
+                    <div class="song-cover"><!--歌曲图片盒开始-->
+                        <img src="../image/songlogo1.jpg" alt="烟火向往星空">
+                    </div><!--歌曲图片盒结束-->
+                    <div class="song-info"><!--歌曲文字盒开始-->
+                        <h4 class="song-title">烟火向往星空</h4>
+                        <p class="song-singer">耳朵便利店</p>
+                    </div><!--歌曲文字盒结束-->
+                    <div class="song-duration">3.13</div><!--歌曲时长-->
+                    <div class="song-actions"><!--歌曲播放功能开始-->
+                        <button class="play-song"><i class="fas fa-play"></i></button>
+                        <button class="collect-song"><i class="far fa-heart"></i></button>
+                    </div><!--歌曲播放功能结束-->
+                </div>
+                <div class="song-item" data-id="2" data-audio="../music/song2.mp3"><!--data-*是自定义属性--> <!-- 歌曲2 -->
+                    <div class="song-cover"><!--歌曲图片盒开始-->
+                        <img src="../image/songlogo2.jpg" alt="青云之上">
+                    </div><!--歌曲图片盒结束-->
+                    <div class="song-info"><!--歌曲文字盒开始-->
+                        <h4 class="song-title">青云之上</h4>
+                        <p class="song-singer">CMJ</p>
+                    </div><!--歌曲文字盒结束-->
+                    <div class="song-duration">2:23</div><!--歌曲时长-->
+                    <div class="song-actions"><!--歌曲播放功能开始-->
+                        <button class="play-song"><i class="fas fa-play"></i></button>
+                        <button class="collect-song"><i class="far fa-heart"></i></button>
+                    </div><!--歌曲播放功能结束-->
+                </div>
+                <div class="song-item" data-id="3" data-audio="../music/song3.mp3"><!--data-*是自定义属性--> <!-- 歌曲3 -->
+                    <div class="song-cover"><!--歌曲图片盒开始-->
+                        <img src="../image/songlogo3.jpg" alt="疯长">
+                    </div><!--歌曲图片盒结束-->
+                    <div class="song-info"><!--歌曲文字盒开始-->
+                        <h4 class="song-title">疯长</h4>
+                        <p class="song-singer">全幺九</p>
+                    </div><!--歌曲文字盒结束-->
+                    <div class="song-duration">2.38</div><!--歌曲时长-->
+                    <div class="song-actions"><!--歌曲播放功能开始-->
+                        <button class="play-song"><i class="fas fa-play"></i></button>
+                        <button class="collect-song"><i class="far fa-heart"></i></button>
+                    </div><!--歌曲播放功能结束-->
+                </div>
+            </div><!--歌曲列表结束-->
+         </div><!--歌曲列表区结束-->
+        <div class="collected-div"><!--收藏歌曲区开始-->
+            <div class="div-header"><!--歌曲头部开始-->
+                <h2>我的收藏 <span class="collect-count">(0)</span></h2><!--收藏数量-->
+            </div><!--歌曲头部结束-->
+            <div class="collected-list"><!--收藏列表开始-->
+                <p class="empty-tip">暂无收藏歌曲，点击歌曲旁的⭐添加</p>
+            </div><!--收藏列表结束-->
+        </div><!--收藏歌曲区结束-->
+    </main>
+    <div class="player-footer"><!--底部播放器开始-->
+        <div class="playing-info"><!--播放信息开始-->
+            <img src="../image/song-playing.jpg" alt="当前播放" class="playing-cover">
+            <div class="playing-text"><!--播放文本开始-->
+                <h4 class="playing-title">暂无播放歌曲</h4>
+                <p class="playing-singer">--</p>
+            </div><!--播放文本结束-->
+        </div><!--播放信息结束-->
+        <div class="player-controls"><!--播放控件开始-->
+            <button class="prev-btn"><i class="fas fa-step-backward"></i></button><!--上一首-->
+            <button class="toggle-play"><i class="fas fa-play"></i></button><!--播放开关-->
+            <button class="next-btn"><i class="fas fa-step-forward"></i></button><!--下一首-->
+        </div><!--播放控件结束-->
+        <div class="player-progress"><!--播放度开始-->
+            <span class="current-time">00:00</span><!--开始时间-->
+            <div class="progress-bar">
+                <div class="progress-fill"></div>
+            </div>
+            <span class="total-time">00:00</span><!--结束时间-->
+        </div><!--播放度结束-->
+        <audio id="audio-player" preload="auto"></audio><!-- 音频元素隐藏，浏览器自动预加载 -->
+    </div><!--底部播放器结束-->
+    <footer><!--页脚开始-->
+        <p>&copy;云枢博客注明  版权所有 | 网站备案号：粤ICP备XXXXXXX号</p>
+    </footer><!--页脚结束-->
+</body>
+</html>

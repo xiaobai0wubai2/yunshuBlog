@@ -1,0 +1,108 @@
+/* 卡片组样式 */
+.card-group {
+  max-width: 1200px;
+  margin: 80px auto;
+  display: flex;
+  gap: 50px;
+  margin-bottom: 80px;
+}
+
+/* 卡片通用样式 */
+/* 卡片主题=体样式 */
+.card {
+  background-color: #4f69fc5b;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.192);
+  padding: 20px;
+  flex: 1;
+  transition: transform 0.3s;
+}
+/* 鼠标悬浮在卡片主题样式 */
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* 卡片头部样式*/
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #f8c16fad;
+}
+/* 卡片头部标题样式 */
+.card-header h3 {
+  color: #2d2d44;
+  font-size: 2rem;
+}
+/* 卡标样式 */
+.card-icon {
+  font-size: 2rem;
+  color: aquamarine;
+}
+
+/* 卡片导航列表li样式 */
+.link-list li {
+  margin-bottom: 12px;
+}
+/* 卡片列表导航样式 */
+.link-list a {
+  color: #555;
+  text-decoration: none;
+  font-size: 1.2rem;
+  display: block;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: background-color 0.3s;
+}
+/* 鼠标悬浮在卡片列表导航样式 */
+.link-list a:hover {
+  background-color: #1393e969;
+  color: #2d2d44;
+}
+/* 自制工具卡片样式 */
+.tool-item {
+  margin-bottom: 20px;
+  padding: 15px;
+  border: 1px solid #f0f0f0;
+  border-radius: 8px;
+}
+/* 自制工具卡片标题样式 */
+.tool-item h4 {
+  color: #2d2d44;
+  margin-bottom: 5px;
+}
+/* 自制工具卡片段落样式 */
+.tool-item p {
+  color: #888;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+/* 工具按钮样式 */
+.tool-btn {
+  background-color: #2d2d44;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+/* 鼠标悬浮在工具按钮样式 */
+.tool-btn:hover {
+  background-color: #4a4a6a;
+}
+/* 底部样式 */
+footer{
+  position: fixed;
+  bottom: 0;
+  left: 0%;
+  width: 100%;
+  background: #2d3748;
+  color: #a0aec0;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 3rem;
+  font-size: 0.9rem;
+}

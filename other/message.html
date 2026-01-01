@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>云枢博客留言</title>
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/message.css">
+    <script src="../js/jquery-3.4.1.js"></script>
+    <script src="../js/index.js"></script>
+    <script src="../js/message.js"></script>
+</head>
+<body>
+    <nav class="nav" id="nav" style="z-index: 100; "><!--导航栏-->
+        <div class="container"><!--容器-->
+            <h1 class="left_logo"><!--左logo-->
+                <a href="">关于云枢博客</a>
+            </h1><!--左logo结束-->
+            <ul class="nav-list"><!--导航列表-->
+                <li><a href="../index.html">🏠首页</a></li>
+                <li><a href="personage.html">💻个人</a></li>
+                <li><a href="record.html">📓记录</a></li>
+                <li><a href="photoTour.html">🚗旅拍</a></li>
+                <li><a href="music.html">🎼音乐</a></li>
+                <li><a href="#"  style="color: aquamarine;">🗨️留言</a></li>
+                <li><a href="treasureBox.html">🔧百宝箱</a></li>
+                <li><a href="about.html">🦈关于</a></li>
+                <li><a href="loginID.html"><img src="../image/cyburpunkcat1.png" alt="" class="loginID" id="loginID" title="登录"></a></li>
+            </ul><!--导航列表结束-->
+        </div><!--容器nav结束-->
+    </nav><!--导航栏结束-->
+    <main>
+        <!-- 弹幕容器 -->
+        <div class="danmu-container" id="danmuContainer"></div>
+        <div class="main-content"><!--留言主题框-->
+            <div class="message-input"><!--发送留言框-->
+                <h2>发送留言</h2>
+                <form action="" id="messageFrom"><!--留言表单开始-->
+                    <div class="form-group">
+                        <label for="username">你的昵称</label>
+                        <input type="text"  name="" id="username" placeholder="请输入昵称(2-8字)：" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="content">留言谈条</label>
+                        <textarea name="" id="content" placeholder="想说的话（1-50字）" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">提交留言</button>
+                </form><!--留言表单结束-->
+            </div><!--发送留言框结束-->
+            
+            <div class="message-list"><!--留言列表-->
+                <h2>留言墙</h2>
+                <div id="messageList"></div><!--储存用户输入结果-->
+            </div><!--留言列表结束-->
+            <button id="clearAllMsg">清空所有留言</button>
+             <div class="hot-tags"><!-- 热门词条开始 -->
+                <h3>热门话题</h3>
+                <div class="tags-container"><!--标签主体开始-->
+                    <div class="tag-item">旅行日记</div>
+                    <div class="tag-item">美食探店</div>
+                    <div class="tag-item">生活感悟</div>
+                    <div class="tag-item">技术分享</div>
+                    <div class="tag-item">电影推荐</div>
+                    <div class="tag-item">读书打卡</div>
+                    <div class="tag-item">职场干货</div>
+                    <div class="tag-item">摄影技巧</div>
+                </div><!--标签主体结束-->
+             </div><!-- 热门词条结束 -->
+        </div><!--留言主题框结束-->
+    </main>
+    <footer>
+        <!-- 作者 -->
+        <p>&copy;云枢博客注明  版权所有 | 网站备案号：粤ICP备XXXXXXX号</p>
+    </footer>
+</body>
+</html>

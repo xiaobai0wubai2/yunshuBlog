@@ -1,0 +1,302 @@
+/* 清除默认样式 */
+*{
+    padding:0px;
+    margin: 0px;
+    list-style: none;
+    text-decoration: none;
+    font-family: myfont;
+}
+/* 设置字体 */
+@font-face {
+  font-family: myfont;
+  src: url(../STHeiti\ Light.ttc);
+}
+
+body{
+  /* 设置鼠标为cur图片 */
+  cursor: url(../image/normal.cur),auto;
+  font-size: 20px;
+}
+/* a的过渡样式缓慢 */
+a{
+    transition: all .6s cubic-bezier(0.215, 0.610, 0.355, 1);
+}
+/*  鼠标悬浮在a标签样式*/
+a:hover {
+    color: #3498db;
+}
+/* 导航样式 */
+.nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  white-space: nowrap;
+  z-index: 1;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  transition: all .3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  background:linear-gradient(to bottom,#3b372d,#1a1301);
+}
+/* 容器样式 */
+.container{
+    max-width: 1200px;
+    margin: 0 auto;/*水平居中*/
+    padding: 15px;
+}
+/* 导航下的容器样式 */
+.nav > .container {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;/*水平两端对齐*/
+    align-items: center;  /*垂直居中*/
+}
+/* 左logo样式 */
+.nav > .container > .left_logo a{
+    color:#fff;
+    padding: 8px 12px;
+    letter-spacing: 2px;
+    margin-right: 112px;
+}
+/* 导航下列表ul样式 */
+.nav > .container > .nav-list{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* 导航下列表ul的a样式 */
+.nav > .container > .nav-list li a{
+    color: #fff;
+    margin: 0px 8px;
+}
+/* 导航下点击a后的样式 */
+.nav > .container > .left_logo a:hover,
+.nav > .container > .nav-list li a:hover{
+    color: #e9543a;
+}
+/* 导航激活后样式 */
+.nav .active{
+    background: linear-gradient(to bottom,#f3f2f1,#d1d1cf);
+}
+/* 导航激活后a样式 */
+.nav .active > .container > .left-logo a,.nav .active > .container > .nav-list li a{
+    color: #535455;
+}
+/* 导航下的ul元素的img */
+.loginID{
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    overflow: hidden;
+}
+/*banner轮播样式 */
+.banner {
+  height: 60vh;
+  min-height: 500px;
+  overflow: hidden;
+  position: relative;
+}
+/* 轮播滑块样式 */
+.banner-slider {
+  width: 100%;
+  height: 100%;
+}
+/* 轮播条样式 */
+.banner-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+/* 轮播图激活后样式 */
+.banner-item.active {
+  opacity: 1;
+}
+/* 轮播图文本样式 */
+.banner-text {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: translateY(-50%);
+  color: #fff;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+}
+/* 轮播图文本标题样式 */
+.banner-text h2 {
+  font-size: 48px;
+  margin-bottom: 15px;
+  animation: fadeUp 1s ease;
+}
+/* 轮播图段落样式 */
+.banner-text p {
+  font-size: 22px;
+  animation: fadeUp 1.2s ease 0.2s backwards;
+}
+
+/* 上移动画 */
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* banner控制器样式 */
+.banner-dots {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+}
+/* 控制器点样式 */
+.banner-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.5);
+  cursor: pointer;
+  transition: background 0.3s;
+}
+/* 控制器激活后样式 */
+.banner-dot.active {
+  background: #fff;
+  transform: scale(1.2);
+}
+
+/*功能卡片区样式*/
+.card-div{
+  padding: 60px 0;
+  background: #f8f9fa;
+}
+/* 功能卡片区内容样式 */
+.card-div .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+/* 卡片条样式 */
+.card-item {
+  background: #fff;
+  padding: 30px 20px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+/* 卡片条激活后样式 */
+.card-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+/* 卡片图标样式 */
+.card-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 20px;
+  /* background: #42b983; */
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 32px;
+}
+/* 卡片标题样式 */
+.card-item h3 {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 10px;
+}
+/* 卡片段落样式 */
+.card-item p {
+  color: #666;
+  line-height: 1.6;
+}
+
+/* 最新动态区样式 */
+.news-div {
+  padding: 60px 0;
+  margin-bottom: 200px;
+}
+/* 最新动态区标题样式 */
+.news-div h2 {
+  font-size: 28px;
+  color: #333;
+  text-align: center;
+  margin-bottom: 40px;
+  position: relative;
+}
+/* 小蓝条样式 */
+.news-div h2::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: #42b1b9;
+}
+/* 消息列表样式 */
+.news-list {
+  max-width: 800px;
+  margin: 0 auto;
+}
+/* 消息条样式 */
+.news-item {
+  padding: 20px 0;
+  border-bottom: 1px dashed #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background 0.3s;
+}
+/* 鼠标悬浮在消息条样式 */
+.news-item:hover {
+  background: #f8f9fa;
+  padding-left: 10px;
+}
+/* 消息条日期样式 */
+.news-date {
+  color: #999;
+  font-size: 0.8rem;
+  min-width: 100px;
+  text-align: right;
+}
+/* 底部样式 */
+footer{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: #2d3748;
+  color: #a0aec0;
+  text-align: center;
+  padding: 3rem;
+  margin-top: 3rem;
+  font-size: 0.9rem;
+}
+
+/* 响应式设计*/
+@media (max-width: 768px) {
+  .banner-text h2 {
+    font-size: 32px;
+  }
+  .banner-text p {
+    font-size: 18px;
+  }
+}
+
+

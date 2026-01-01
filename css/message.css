@@ -1,0 +1,291 @@
+body{
+    color: #333;
+    background: url(../image/backgroundimage2.jpg) center/cover no-repeat fixed;
+}
+/* 弹幕主体内容 */
+.danmu-container{
+    position: fixed;
+    top: 130px;
+    left: 0;
+    width: 100%;
+    /* 高度为当前视口高度减去60px */
+    height: calc(100vh - 60px);
+    /* 弹幕容器是全屏固定的层级最高的，如果不设 none，容器会遮挡页面上的按钮、输入框等元素，导致点击不到 */
+    pointer-events: none;
+    /* 留言显示 */
+    z-index: 9999;
+    overflow: hidden;
+}
+/* 弹幕条样式 */
+.danmu-item{
+    /* 让弹幕本身能响应点击事件，实现点击弹幕删除”的功能 */
+    pointer-events: auto;
+    position: absolute;
+    white-space: nowrap;
+    padding: 6px 12px;
+    background-color: rgba(66, 153, 255,0.8);
+    color: #030303;
+    font-size: 14px;
+    cursor: pointer;
+    z-index: 50;
+    transition: all 0.3s;
+    animation: danmuMove linear infinite;
+}
+/* 鼠标悬停在弹幕条样式 */
+.danmu-item:hover{
+    transform: scale(2);
+    background-color: rgba(66,153,255,1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0,0.2);
+    animation-play-state: paused;
+}
+/* 弹幕动画 */
+@keyframes danmuMove{
+    from{
+        /* 元素初始在屏幕右侧外部，vw表示当前视口宽度 */
+        transform: translateX(100vw);
+    }
+    to{
+        /* 元素初始在屏幕左侧侧外部 */
+        transform: translateX(-100vw);
+    }
+}
+/* 留言主题框样式 */
+.main-content{
+    max-width: 1200px;
+    margin: 200px auto;
+    /* 网格布局 */
+    display: grid;
+    /* 将网格容器的宽度划分为两列,第一列占容器宽度的70%，第二列占容器宽度的30%。 */
+    grid-template-columns: 70% 30%;
+    /* 列宽为30px */
+    gap: 30px;
+    position: relative;
+    z-index: 30;
+}
+/* 发送留言框样式 */
+.message-input{
+    background: #dcf6f8;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+/* 留言框标题样式 */
+.message-input h2{
+    color: #2d3748;
+    margin-bottom: 25px;
+    font-size: 1.4rem;
+    display: flex;
+    align-items: center;
+}
+/* 蓝条子样式 */
+.message-input h2::before{
+    content: "";
+    display: inline-block;
+    width: 4px;
+    height: 20px;
+    background: #4299e1;
+    margin-right: 8px;
+    border-radius: 2px;
+}
+/* 表单组样式 */
+.form-group{
+    margin-bottom: 20px;
+}
+/* 表单组文字样式 */
+.form-group label{
+    display: block;
+    margin-bottom: 6px;
+    color: #20427c;
+    font-size:1.2rem;
+}
+/* 表单组输入框和多行文本输入框样式 */
+.form-group input,.form-group textarea{
+    width: 95%;
+    padding: 10px 14px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+/* 表单组输入框和多行文本输入框激活后样式 */
+.form-group input:focus,.form-group textarea:focus{
+    outline: none;
+    border-color: #4299e1;
+    box-shadow: 0 0 0 3px rgba(66,153,255,0.1);
+}
+/* 表单组多行文本输入框样式 */
+.form-group textarea{
+    min-height: 120px;
+    /* 沿垂直方向拖动调整元素高度，水平方向无法调整 */
+    resize: vertical;
+    line-height: 1.6;
+}
+/* 提交按钮样式 */
+.submit-btn{
+    background: #4299e1;
+    color: #fff;
+    border:none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background 0.3s;
+    width: 100%;
+    margin-top: 10px;
+}
+/* 清空所有留言按钮样式 */
+#clearAllMsg{
+    background: #e15442;
+    color: #fff;
+    border:none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background 0.3s;
+    width: 100%;
+    margin-top: 10px;
+    display: grid;
+    grid-column: 1 /2;
+    grid-row: 3/3;
+}
+/* 鼠标悬停在提交按钮样式 */
+.submit-btn:hover{
+    background: #3182ce;
+}
+/* 留言列表样式 */
+.message-list{
+    background: #58f3c5;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    /* 仅占第 1 列 */
+    grid-column: 1/2;
+}
+/* 留言列表样式标题样式 */
+.message-list h2{
+    color: #2d3748;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+}
+/* 小紫条样式 */
+.message-list h2::before{
+    content: "";
+    display: inline-block;
+    width: 4px;
+    height: 20px;
+    background-color: #9f7aea;
+    margin-right: 8px;
+    border-radius: 2px;
+}
+/* 留言条样式 */
+.message-item{
+    padding: 15px;
+    border-bottom: 1px solid #f0f0f0;
+    transition: background 0.3s;
+}
+/* 最后一个留言条没有下边框 */
+.message-item:last-child{
+    border-bottom: none;
+}
+/* 鼠标悬停在留言条样式 */
+.message-item:hover{
+    background: #f8f79c;
+}
+/* 空留言样式 */
+.empty-message{
+    text-align:center;
+    padding: 40px;
+    color: #718096;
+    font-size: 0.95rem;
+}
+/* 留言头部样式 */
+.message-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.8rem;
+}
+/* 留言名称样式 */
+.message-username{
+    font-weight: 700;
+    color: #4299e1;
+    font-size: 1.1rem;
+}
+/* 留言时间样式  */
+.message-time{
+    font-size: 0.8rem;
+    color: #718096;
+}
+/* 留言内容样式 */
+.message-content{
+    color: #4a5568;
+    line-height: 1.8;
+    font-size: 0.95rem;
+}
+
+/* 热门词条样式 */
+.hot-tags{
+    background: #c2b0f3;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    /* 列占2/3 */
+    grid-column: 2/3;
+    /* 行占1/3 */
+    grid-row: 1/4;
+}
+.hot-tags h3{
+    color: #2d3748;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+}
+/* 小黄条样式 */
+.hot-tags h3::before{
+    content: "";
+    display: inline-block;
+    width: 4px;
+    height: 16px;
+    background-color: #f7f44d;
+    margin-right: 8px;
+    border-radius: 2px;
+}
+/* 标签主体样式 */
+.tags-container{
+    display: flex;
+    flex-wrap: wrap;
+}
+/* 标签条样式 */
+.tag-item{
+    margin: 5px;
+    padding: 6px 14px;
+    border-radius: 20px;
+    background: #f5fafe;
+    color: #4299e1;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+/* 鼠标悬停在标签条样式 */
+.tag-item:hover{
+    background-color: #4299e1;
+    color: #fabfbf;
+    transform: translateY(-5px) scale(1.2);
+}
+/* 底部样式 */
+footer{
+    position: fixed;
+    bottom: 0;
+    z-index: 1000;
+    width: 100%;
+    background: #2d3748;
+    color: #a0aec0;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 3rem;
+    font-size: 0.9rem;
+}

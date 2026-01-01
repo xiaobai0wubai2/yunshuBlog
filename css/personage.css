@@ -1,0 +1,168 @@
+body{
+  background: url(../image/xiaoxin.jpg) center/cover no-repeat fixed;
+  opacity: 0.9;
+  width: 100%;
+  min-height: 100vh;/*确保覆盖视口高度*/
+  margin: 0;
+}
+/* 渐变标题容器样式 */
+.gradient-title{
+  font-size: 2.5rem;
+  font-weight: 800;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+/* 星星样式 */
+.gradient-title .star{
+  color: #ffd700;
+  font-size: 3rem;
+  text-shadow: 0 0 4px rgba(255,215,0,0.8);/*星星发光效果*/
+}
+/* 设置背景样式 */
+.gradient-title{
+  /* 渐变背景 */
+  background: linear-gradient(
+    90deg,
+    #fc0303,
+    #00bfff,
+    #fc0303
+  );
+  background-size: 200% 100%;/*背景宽度设为200%，为动画预留空间*/
+  -webkit-background-clip: text;
+  background-clip: text;/*把渐变裁剪到文字范围；*/
+  color: transparent;/*文字本身透明，显示背景渐变*/
+  /*背景左右移动，实现渐变流动*/
+  animation: gradientMove 3s linear infinite;
+}
+/* 定义渐变移动的动画 */
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%; /*起始位置*/
+  }
+  100% {
+    background-position: 200% 50%; /*结束位置*/
+  }
+}
+/* 个人页面全局样式 */
+.personage-main {
+  opacity: 0.8;
+  width: 90%;
+  max-width: 1000px;
+  margin: 30px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* 个人信息卡片样式 */
+.info-card {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid #eee;
+}
+/* 个人信息头像样式 */
+.avatar img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #f5f5f5;
+}
+/* 个人信息文本样式 */
+.info-text {
+  margin-left: 20px;
+}
+/* 个人信息文本标题样式 */
+.info-text h2 {
+  font-size: 24px;
+  color: #333;
+  margin: 0 0 10px;
+}
+/* 个人信息段落样式 */
+.info-text p {
+  color: #666;
+  margin: 5px 0;
+  line-height: 1.6;
+}
+
+/* 内容列表样式*/
+.content-list {
+  margin-top: 30px;
+}
+/* 内容列表标题样式 */
+.content-list h3 {
+  font-size: 20px;
+  color: #333;
+  border-left: 4px solid #42b983;
+  padding-left: 10px;
+  margin-bottom: 20px;
+}
+/* 列表样式 */
+.content-list ul {
+  padding: 0;
+}
+/* 我的分享列表样式 */
+.content-list li {
+  padding: 15px 10px;
+  border-bottom: 1px dashed #eee;
+  transition: background 0.3s;
+}
+/* 鼠标悬浮在我的列表分享中样式 */
+.content-list li:hover {
+  background: #d4d1d1;
+}
+/* 分享列表导航栏样式 */
+.content-list a {
+  text-decoration: none;
+  color: #333;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+/* 分享列表时间样式 */
+.content-list i {
+  color: #999;
+  font-size: 0.8rem;
+}
+/*时钟容器样式*/
+.clock-wrap {
+  width: 700px; 
+  height: 100px; 
+  margin: 10px auto; 
+  background: rgba(255, 255, 255, 0.8); 
+  border-radius: 10px; 
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*时钟文字样式*/
+.clock {
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #333; 
+  background: linear-gradient(90deg, #ff4500, #00bfff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  letter-spacing: 2px;
+}
+
+/* 底部样式 */
+footer{
+  position: fixed;
+  bottom: 0;
+  z-index: 2;
+  width: 100%;
+  background: #2d3748;
+  color: #a0aec0;
+  text-align: center;
+  padding: 3rem;
+  margin-top: 3rem;
+  font-size: 0.9rem;
+}
